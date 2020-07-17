@@ -1,0 +1,15 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: cronwpchksumbot 
+spec:
+  schedule: "*/5 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: wpchksumbot 
+            image: wpchksumbot 
+            imagePullPolicy: Never 
+          restartPolicy: OnFailure

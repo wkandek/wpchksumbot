@@ -1,0 +1,14 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: wpchksumbot 
+spec:
+  template:
+    spec:
+      containers:
+      - image: wpchksumbot
+        name: wpchksumbot
+        imagePullPolicy: Never 
+        resources: {}
+      restartPolicy: Never
+  backoffLimit: 4 
